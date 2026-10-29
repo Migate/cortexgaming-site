@@ -4,32 +4,99 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cortex Gaming</title>
+<meta name="description" content="Cortex Gaming makes small, retro-style games for your phone. Home of Neke The Snake.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
 <style>
-:root{--bg:#14171c;--fg:#e8e6d9;--accent:#b5b02a;--muted:#9a9a8c}
+:root{
+  --bg:#0f1216;
+  --panel:#171b21;
+  --line:#262c35;
+  --fg:#ece9da;
+  --muted:#9a9b8e;
+  --lcd:#b5b02a;
+  --lcd-dark:#2b2a0c;
+}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6}
-main{max-width:640px;margin:0 auto;padding:64px 16px}
-h1{font-size:2rem;letter-spacing:.12em;text-transform:uppercase;margin:0 0 8px}
-p.lead{color:var(--muted);margin:0 0 40px}
-.card{border:1px solid #2a2f37;border-radius:12px;padding:20px;margin-bottom:16px}
-.card h2{margin:0 0 6px;font-size:1.2rem;color:var(--accent)}
-.card p{margin:0 0 12px}
-a{color:var(--accent)}
-footer{margin-top:48px;color:var(--muted);font-size:.9rem}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--fg);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.6;
+  background-image:radial-gradient(circle at 1px 1px,#1a1f26 1px,transparent 0);
+  background-size:18px 18px;
+}
+a{color:var(--lcd)}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{padding:28px 0}
+.brand{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-weight:700;letter-spacing:.22em;text-transform:uppercase;font-size:.95rem}
+.brand span{color:var(--lcd)}
+.hero{display:grid;grid-template-columns:1fr;gap:32px;align-items:center;padding:24px 0 56px}
+@media(min-width:760px){.hero{grid-template-columns:1.1fr .9fr}}
+.hero h1{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:clamp(2rem,6vw,3.4rem);line-height:1.1;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--lcd)}
+.hero p{color:var(--muted);font-size:1.1rem;margin:0 0 28px;max-width:34ch}
+.btn{display:inline-block;background:var(--lcd);color:var(--lcd-dark);font-weight:700;text-decoration:none;padding:14px 22px;border-radius:10px;border:2px solid var(--lcd)}
+.btn:hover{background:transparent;color:var(--lcd)}
+.lcd{background:var(--lcd);border-radius:18px;padding:14px;box-shadow:0 0 0 6px #20242b,0 18px 40px rgba(0,0,0,.5);max-width:300px;margin:0 auto}
+.lcd img{display:block;width:100%;height:auto;border-radius:8px}
+section{padding:24px 0 48px}
+h2{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;text-transform:uppercase;letter-spacing:.14em;font-size:1rem;color:var(--lcd);margin:0 0 20px}
+.game{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}
+.game img{width:84px;height:84px;border-radius:18px}
+.game h3{margin:0 0 4px;font-size:1.25rem}
+.game p{margin:0 0 10px;color:var(--muted)}
+.shots{display:grid;grid-auto-flow:column;grid-auto-columns:min(62%,230px);gap:14px;overflow-x:auto;padding-bottom:12px;scroll-snap-type:x mandatory}
+@media(min-width:760px){.shots{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);grid-auto-columns:auto;overflow:visible}}
+.shots img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start;display:block}
+footer{border-top:1px solid var(--line);padding:28px 0 48px;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
 </style>
 </head>
 <body>
-<main>
-<h1>Cortex Gaming</h1>
-<p class="lead">Small games for your phone.</p>
-<div class="card">
-<h2>Neke The Snake</h2>
-<p>Classic pixel snake on a retro LCD screen. Swipe or play with number keys.</p>
-<p><a href="https://play.google.com/store/apps/details?id=app.nekethesnake">Get it on Google Play</a></p>
-</div>
-<footer>
-<a href="https://sites.google.com/view/neke-the-snake">Privacy policy</a>
-</footer>
+<header>
+  <div class="wrap"><div class="brand">Cortex <span>Gaming</span></div></div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <h1>Small games.<br><em>Big nostalgia.</em></h1>
+      <p>Retro-style games for your phone, made one pixel at a time.</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=app.nekethesnake">Get Neke The Snake on Google Play</a>
+    </div>
+    <div class="lcd">
+      <img src="assets/shot1.jpg" alt="Neke The Snake gameplay on a retro LCD screen" width="540" height="960">
+    </div>
+  </div>
+
+  <section id="games">
+    <h2>Our games</h2>
+    <div class="game">
+      <img src="assets/icon.png" alt="Neke The Snake app icon" width="84" height="84">
+      <div>
+        <h3>Neke The Snake</h3>
+        <p>Classic pixel snake on a retro LCD screen. Swipe or play with number keys. Nine speed levels, walls on or off, and it works offline.</p>
+        <a href="https://play.google.com/store/apps/details?id=app.nekethesnake">Open on Google Play</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="screens">
+    <h2>Screenshots</h2>
+    <div class="shots">
+      <img src="assets/shot1.jpg" alt="Gameplay" loading="lazy" width="540" height="960">
+      <img src="assets/shot2.jpg" alt="Big apple bonus" loading="lazy" width="540" height="960">
+      <img src="assets/shot3.jpg" alt="Main menu" loading="lazy" width="540" height="960">
+      <img src="assets/shot4.jpg" alt="Settings and keypad controls" loading="lazy" width="540" height="960">
+    </div>
+  </section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Cortex Gaming</span>
+    <a href="https://sites.google.com/view/neke-the-snake">Privacy policy</a>
+  </div>
+</footer>
 </body>
 </html>
