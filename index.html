@@ -45,6 +45,8 @@ h2{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;text-transform:up
 .game img{width:84px;height:84px;border-radius:18px}
 .game h3{margin:0 0 4px;font-size:1.25rem}
 .game p{margin:0 0 10px;color:var(--muted)}
+.badge{display:inline-block;margin-left:-10px}
+.badge img{display:block;width:auto;height:64px;border-radius:0}
 .shots{display:grid;grid-auto-flow:column;grid-auto-columns:min(62%,230px);gap:14px;overflow-x:auto;padding-bottom:12px;scroll-snap-type:x mandatory}
 @media(min-width:760px){.shots{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);grid-auto-columns:auto;overflow:visible}}
 .shots img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start;display:block}
@@ -76,7 +78,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
       <div>
         <h3>Neke The Snake</h3>
         <p>Classic pixel snake on a retro LCD screen. Swipe or play with number keys. Nine speed levels, walls on or off, and it works offline.</p>
-        <a href="https://play.google.com/store/apps/details?id=app.nekethesnake">Open on Google Play</a>
+        <a class="badge" href="https://play.google.com/store/apps/details?id=app.nekethesnake"><img src="assets/google-play-badge.png" alt="Get it on Google Play" width="165" height="64"></a>
       </div>
     </div>
   </section>
@@ -96,6 +98,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
   <div class="wrap">
     <span>&copy; 2026 Cortex Gaming</span>
     <a href="https://sites.google.com/view/neke-the-snake">Privacy policy</a>
+    <span>Google Play and the Google Play logo are trademarks of Google LLC.</span>
   </div>
 </footer>
 </body>
