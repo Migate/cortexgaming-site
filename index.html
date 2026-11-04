@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cortex Gaming</title>
+<title>Cortex Gaming | Arcade games for your phone</title>
 <meta name="description" content="Cortex Gaming is an independent studio making arcade-style games for your phone.">
-<meta name="theme-color" content="#f1f3f6">
+<meta name="theme-color" content="#0b0f24">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="stylesheet" href="/assets/base.css">
 <link rel="stylesheet" href="/assets/studio.css">
@@ -30,30 +30,34 @@
 
   <main id="main">
     <div class="hero">
-      <h1>Arcade games for your phone.</h1>
-      <p class="lead">Cortex Gaming is an independent studio making arcade-style games.</p>
-      <div class="actions">
-        <a class="btn" href="#contact">Get in touch</a>
-      </div>
+      <h1>Games made for one more try.</h1>
+      <p class="lead">Cortex Gaming is an independent studio making arcade games for phones. Quick to learn, tough to put down, and built around one thing: beating your own score.</p>
+      <canvas id="play" class="playfield" aria-hidden="true"></canvas>
     </div>
 
-
     <section id="studio">
-      <div class="about">
-        <h2>The studio</h2>
-        <div>
-          <p>Cortex Gaming is an independent game studio. We make arcade-style games for phones and release them on Google Play: quick to pick up, and built for one more try.</p>
-          <p>You can find our games under the Games menu at the top of the page.</p>
-        </div>
-      </div>
+      <p class="statement">We build arcade games the classic way: a clear goal, a challenge that keeps rising, and a score worth beating. Then we keep refining them until they feel right under your thumb.</p>
+      <ul class="principles">
+        <li>
+          <h3>Simple to learn</h3>
+          <p>A few seconds is all it takes to understand the rules, and the controls stay out of your way.</p>
+        </li>
+        <li>
+          <h3>A score to beat</h3>
+          <p>Every run ends with a number, and a good reason to go again.</p>
+        </li>
+        <li>
+          <h3>Made small</h3>
+          <p>Light and quick to open, so a game fits into any spare minute.</p>
+        </li>
+      </ul>
     </section>
 
     <section id="contact">
-      <div class="about">
-        <h2>Contact</h2>
-        <div>
-          <p>Questions, bug reports and ideas are welcome: <a href="mailto:cortexgaming62@gmail.com">cortexgaming62@gmail.com</a></p>
-        </div>
+      <div class="contact-box">
+        <h2>Say hello</h2>
+        <p>Questions, bug reports, ideas or press: write to us any time.</p>
+        <a class="btn" href="mailto:cortexgaming62@gmail.com">cortexgaming62@gmail.com</a>
       </div>
     </section>
   </main>
@@ -67,5 +71,6 @@
   </div>
 </footer>
 <script src="/assets/nav.js" defer></script>
+<script src="/assets/playfield.js" defer></script>
 </body>
 </html>
