@@ -7,7 +7,9 @@
 <meta name="description" content="Neke The Snake is a retro snake game for Android. Nine speed levels, five maps and a pixel LCD look. Free on Google Play.">
 <meta name="theme-color" content="#0f1216">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/base.css">
+<link rel="stylesheet" href="/assets/snake.css">
+<script>document.documentElement.classList.add("js")</script>
 <link rel="preload" href="/assets/fonts/silkscreen-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
@@ -16,7 +18,13 @@
   <header class="top">
     <a class="mark" href="/">Cortex Gaming</a>
     <nav class="nav" aria-label="Main">
-      <a href="/#games" aria-current="page">Games</a>
+      <div class="menu">
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="games-menu">Games</button>
+        <ul id="games-menu" class="menu-list">
+          <li><a href="/neke-the-snake/">Neke The Snake</a></li>
+          <li><a href="/hollow-arena/">Hollow Arena <span class="chip">Coming soon</span></a></li>
+        </ul>
+      </div>
       <a href="/#contact">Contact</a>
     </nav>
   </header>
@@ -69,5 +77,6 @@
   </div>
 </footer>
 <script src="/assets/crawl.js" defer></script>
+<script src="/assets/nav.js" defer></script>
 </body>
 </html>
