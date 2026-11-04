@@ -27,7 +27,7 @@ body{
 .hero h1{font-weight:700;font-size:clamp(2.9rem,8.6vw,7rem);line-height:.94;letter-spacing:-.035em;margin:0 0 28px;max-width:11ch}
 .hero .lead{font-size:clamp(1.2rem,2.3vw,1.55rem);line-height:1.42;color:var(--muted);max-width:40ch;margin:0}
 
-.playfield{display:block;width:100%;height:clamp(260px,38vw,400px);margin-top:clamp(32px,5vw,56px);border-radius:26px;background:#070a1c;border:1px solid var(--line)}
+.playfield{touch-action:pan-y;cursor:pointer;display:block;width:100%;height:clamp(260px,38vw,400px);margin-top:clamp(32px,5vw,56px);border-radius:26px;background:#070a1c;border:1px solid var(--line)}
 
 h2{font-weight:700;font-size:clamp(1.9rem,4.2vw,3rem);line-height:1.05;letter-spacing:-.02em;margin:0 0 20px}
 main section{padding:clamp(56px,8vw,112px) 0 0}
@@ -71,3 +71,4 @@ main section{padding:clamp(56px,8vw,112px) 0 0}
 .soon-hero::after{content:"";position:absolute;right:-130px;bottom:-130px;width:440px;height:440px;border-radius:50%;border:48px solid rgba(139,124,255,.22)}
 .soon-hero+section p{font-size:1.2rem}
 #process h2{margin-bottom:48px}
+.playfield:focus-visible{outline:3px solid var(--sky);outline-offset:4px}
