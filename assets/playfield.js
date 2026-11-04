@@ -5,8 +5,8 @@
   if (!c) return;
   var ctx = c.getContext('2d');
   var COLORS = ['#ff5a5f', '#ffb020', '#2ee6a6', '#4cc9f0', '#8b7cff'];
-  var ROWS = 5, GAP = 6, BH = 20, TOP = 26, PAD_H = 10, PAD_Y = 30, R = 7, SPEED = 230;
-  var W, H, cols, bw, bricks, pad, ball, last = 0;
+  var ROWS = 5, GAP = 6, BH = 20, TOP = 26, PAD_H = 10, PAD_Y = 46, R = 7, SPEED = 230;
+  var W, H, cols, bw, bricks, pad, ball, last = 0, score = 0, hi = 9990;
   var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function box(x, y, w, h, r, color) {
@@ -55,7 +55,7 @@
       if (!b.alive) continue;
       alive++;
       if (ball.x + R > b.x && ball.x - R < b.x + bw && ball.y + R > b.y && ball.y - R < b.y + BH) {
-        b.alive = false; alive--; ball.vy = -ball.vy; break;
+        b.alive = false; alive--; score += 10; if (score > hi) hi = score; ball.vy = -ball.vy; break;
       }
     }
     if (!alive) newBricks();
@@ -67,6 +67,13 @@
     box(pad.x - pad.w / 2, H - PAD_Y, pad.w, PAD_H, 5, '#f2f4ff');
     ctx.fillStyle = '#f2f4ff';
     ctx.beginPath(); ctx.arc(ball.x, ball.y, R, 0, 7); ctx.fill();
+    ctx.font = '13px Silkscreen, monospace';
+    ctx.fillStyle = '#9ba4c9';
+    ctx.textBaseline = 'alphabetic';
+    ctx.textAlign = 'left';
+    ctx.fillText('SCORE ' + String(score).padStart(6, '0'), 16, H - 12);
+    ctx.textAlign = 'right';
+    ctx.fillText('HI ' + String(hi).padStart(6, '0'), W - 16, H - 12);
   }
 
   function frame(t) {
@@ -76,6 +83,7 @@
     requestAnimationFrame(frame);
   }
 
+  if (document.fonts && document.fonts.load) document.fonts.load('13px Silkscreen');
   layout(); draw();
   window.addEventListener('resize', function () { layout(); draw(); });
   if (!still) requestAnimationFrame(function (t) { last = t; frame(t); });
